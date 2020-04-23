@@ -1,0 +1,7 @@
+{
+    "WebPort" : "8888",  "_doc_WebPort": "The port to be used by http server",
+    "WebDir"  : "web",   "_doc_WebDir" : "The folder where static files are located (html, templates, etc)",
+    "DaoType" : 2,       "_doc_DaoType": "The type of DAO : 1=MemDB, 2=BoltDB, etc",
+    
+    "BoltFileName" : "students.db", "_doc_BoltFileName": "Bolt database file name (eg 'myfile.db')"
+}

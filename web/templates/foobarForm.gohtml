@@ -1,0 +1,77 @@
+{{ template "header" . }}
+{{ template "form-panel-header" . }}
+
+Nb messages : {{len .Page.Messages}} <br/>
+{{range $message := .Page.Messages}} - {{$message}} <br/> {{end}}
+<br/>
+
+  <!-- FIELD "pk1"  [PK]   -->
+  <div class="form-group">
+     <label for="pk1" class="col-sm-2"><u>pk1</u> *</label>
+    <div class="col-sm-8">
+      <input id="pk1" class="form-control" name='pk1' value="{{.Pk1}}" type="" 
+      {{if .Page.UpdateMode}} readonly="readonly" {{ end }}
+      placeholder="string" required />
+    </div>
+  </div>
+
+  <!-- FIELD "pk2"  [PK]   -->
+  <div class="form-group">
+     <label for="pk2" class="col-sm-2"><u>pk2</u> *</label>
+    <div class="col-sm-8">
+      <input id="pk2" class="form-control" name='pk2' value="{{.Pk2}}" type="" 
+      {{if .Page.UpdateMode}} readonly="readonly" {{ end }}
+      placeholder="string" required />
+    </div>
+  </div>
+
+   <!-- FIELD "name"   -->
+  <div class="form-group">
+    <label for="name" class="col-sm-2">Name</label>
+    <div class="col-sm-8">
+    <input id="name" class="form-control" name='name' value="{{.Name}}" type="" placeholder="string"   />
+    </div>
+  </div>
+
+   <!-- FIELD "age"   -->
+  <div class="form-group">
+    <label for="age" class="col-sm-2">Age</label>
+    <div class="col-sm-8">
+    <input id="age" class="form-control" name='age' value="{{.Age}}" type="" placeholder="int"   />
+    </div>
+  </div>
+
+   <!-- FIELD "wage"   -->
+  <div class="form-group">
+    <label for="wage" class="col-sm-2">Wage</label>
+    <div class="col-sm-8">
+    <input id="wage" class="form-control" name='wage' value="{{.Wage}}" type="" placeholder="float32"   />
+    </div>
+  </div>
+
+   <!-- FIELD "weight"   -->
+  <div class="form-group">
+    <label for="weight" class="col-sm-2">Weight</label>
+    <div class="col-sm-8">
+    <input id="weight" class="form-control" name='weight' value="{{.Weight}}" type="" placeholder="float64"   />
+    </div>
+  </div>
+
+   <!-- FIELD "flag"   -->
+  <div class="form-group">
+    <label for="flag" class="col-sm-2">Flag</label>
+    <div class="col-sm-8">
+    <input id="flag" class="form-control" name='flag' value="{{.Flag}}" type="" placeholder="bool"   />
+    </div>
+  </div>
+
+   <!-- FIELD "count"   -->
+  <div class="form-group">
+    <label for="count" class="col-sm-2">Count</label>
+    <div class="col-sm-8">
+    <input id="count" class="form-control" name='count' value="{{.Count}}" type="" placeholder="int64"   />
+    </div>
+  </div>
+
+{{ template "form-panel-footer" . }}
+{{ template "footer" . }}

@@ -1,0 +1,24 @@
+
+
+VIEW :
+ - force URL when loading page
+ - index.html : same look as other pages
+ - links ( top of page ) --> link to static html files
+ - "Entities" menu --> externalise menu item in a separated file
+
+CONFIG (json file):
+ - template parsing ( only once or for each request : config "DevMode : true/false" )
+ X Bolt DB file name ( default name + config name )
+
+PERSISTENCE :
+ X Implem FooBarDAO for BoltDB
+ X Error management when DAO not declared (panic ?)
+ X BoltDB DAO : do not call CreateBucketIfNotExist for each DAO call)
+
+
+LIST ITEM CACHE to populate Combo-Boxes
+
+
+logger standardization 
+https://www.scalyr.com/blog/getting-started-quickly-with-go-logging 
+

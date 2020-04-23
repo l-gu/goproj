@@ -1,0 +1,59 @@
+{{ template "header" . }}
+{{ template "form-panel-header" . }}
+
+Nb messages : {{len .Page.Messages}} <br/>
+{{range $message := .Page.Messages}} - {{$message}} <br/> {{end}}
+<br/>
+
+  <!-- FIELD "id"  [PK]   -->
+  <div class="form-group">
+     <label for="id" class="col-sm-2"><u>Id</u> *</label>
+    <div class="col-sm-8">
+      <input id="id" class="form-control" name='id' value="{{.Id}}" type="" 
+      {{if .Page.UpdateMode}} readonly="readonly" {{ end }}
+      placeholder="string" required />
+    </div>
+  </div>
+
+   <!-- FIELD "firstName"   -->
+  <div class="form-group">
+    <label for="firstName" class="col-sm-2">FirstName</label>
+    <div class="col-sm-8">
+    <input id="firstName" class="form-control" name='firstName' value="{{.FirstName}}" type="" placeholder="string"   />
+    </div>
+  </div>
+
+   <!-- FIELD "lastName"   -->
+  <div class="form-group">
+    <label for="lastname" class="col-sm-2">LastName</label>
+    <div class="col-sm-8">
+    <input id="lastName" class="form-control" name='lastName' value="{{.LastName}}" type="" placeholder="string"   />
+    </div>
+  </div>
+
+   <!-- FIELD "age"   -->
+  <div class="form-group">
+    <label for="age" class="col-sm-2">Age</label>
+    <div class="col-sm-8">
+    <input id="age" class="form-control" name='age' value="{{.Age}}" type="" placeholder="int"   />
+    </div>
+  </div>
+
+   <!-- FIELD "languageCode" (COMBO-BOX)  -->
+  <div class="form-group">
+    <label for="languageCode" class="col-sm-2">LanguageCode</label>
+    <div class="col-sm-8">
+<select id="languageCode" name="languageCode" class="selectpicker" >
+<option value="">(none)</option>
+{{range .Languages}}<option value="{{.Code}}" {{if eq .Code $.LanguageCode}}selected="selected"{{end}}>{{.Name}}</option>
+{{end}}
+</select>
+      <!-- Button with link to referenced entity : gotoPage(uri, comboId) -->
+      <button type="button" class="btn btn-default" 
+      onclick="gotoPage('/language/form?code=', 'languageCode')" ><span class="glyphicon glyphicon-new-window"></span></button>
+
+    </div>
+  </div>
+
+{{ template "form-panel-footer" . }}
+{{ template "footer" . }}
